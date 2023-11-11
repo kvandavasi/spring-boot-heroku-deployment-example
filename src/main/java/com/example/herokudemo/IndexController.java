@@ -14,4 +14,13 @@ public class IndexController {
     public String index() {
         return "Hello there! I'm running.";
     }
+
+    @Autowired
+    private KafkaProducerService producerService;
+
+    @GetMapping("/produce")
+    public String produceMessage(@RequestParam String message) {
+        producerService.produceMessage(message);
+        return "Message sent to Kafka!";
+    }
 }
