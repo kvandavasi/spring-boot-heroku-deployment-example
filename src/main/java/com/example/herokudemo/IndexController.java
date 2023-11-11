@@ -22,7 +22,7 @@ public class IndexController {
 
     private final KafkaProducerService producerService;
 
-    public KafkaController(KafkaProducerService producerService) {
+    public IndexController(KafkaProducerService producerService) {
         this.producerService = producerService;
     }
 
