@@ -10,16 +10,9 @@ import com.example.herokudemo.KafkaProducerService;
 
 @RestController
 public class IndexController {
-    @Autowired
-    private KafkaProducerService producerService;
 
     @GetMapping("/")
     public String index() {
         return "Hello there! I'm running.";
-    }
-    @GetMapping("/produce")
-    public String produceMessage(@RequestParam String message) {
-        producerService.produceMessage(message);
-        return "Message sent to Kafka!";
     }
 }
