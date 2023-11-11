@@ -20,8 +20,11 @@ public class IndexController {
         return "Hello there! I'm running.";
     }
 
-    @Autowired
-    private KafkaProducerService producerService;
+    private final KafkaProducerService producerService;
+
+    public KafkaController(KafkaProducerService producerService) {
+        this.producerService = producerService;
+    }
 
     @GetMapping("/produce")
     public String produceMessage(@RequestParam String message) {
